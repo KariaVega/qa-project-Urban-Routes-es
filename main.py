@@ -1,3 +1,5 @@
+import time
+
 import data
 from selenium import webdriver
 from selenium.webdriver import Keys
@@ -53,6 +55,9 @@ class UrbanRoutesPage:
     def get_to(self):
         return self.driver.find_element(*self.to_field).get_property('value')
 
+    def set_route(self, address_from, address_to):
+        self.set_from(address_from)
+        self.set_to(address_to)
 
 
 class TestUrbanRoutes:
@@ -62,20 +67,26 @@ class TestUrbanRoutes:
     @classmethod
     def setup_class(cls):
         # no lo modifiques, ya que necesitamos un registro adicional habilitado para recuperar el código de confirmación del teléfono
-        from selenium.webdriver import DesiredCapabilities
+        """from selenium.webdriver import DesiredCapabilities
         capabilities = DesiredCapabilities.CHROME
         capabilities["goog:loggingPrefs"] = {'performance': 'ALL'}
-        cls.driver = webdriver.Chrome(desired_capabilities=capabilities)
+        cls.driver = webdriver.Chrome(desired_capabilities=capabilities)"""
+
+        from selenium.webdriver.chrome.options import Options as ChromeOptions
+        chrome_options = ChromeOptions()
+        chrome_options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
+        cls.driver = webdriver.Chrome(options=chrome_options)
 
     def test_set_route(self):
         self.driver.get(data.urban_routes_url)
+        time.sleep(5)
         routes_page = UrbanRoutesPage(self.driver)
         address_from = data.address_from
         address_to = data.address_to
         routes_page.set_route(address_from, address_to)
+        time.sleep(5)
         assert routes_page.get_from() == address_from
         assert routes_page.get_to() == address_to
-
 
     @classmethod
     def teardown_class(cls):
