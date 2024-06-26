@@ -29,16 +29,14 @@ class UrbanRoutesPage:
     card_num_field = (By.XPATH, '//div/input[@id ="number"]')
     code_num_field = (By.XPATH, '//div[@class = "section active unusual"]//input[@id ="code"]')
     add_window = (By.CLASS_NAME, 'plc')
-    active_add_button = (By.XPATH, '//div/button[text()="Agregar"]')  # //div/button[text()="Agregar"]
+    active_add_button = (By.XPATH, '//div/button[text()="Agregar"]')
     select_card_button = (By.XPATH, '//div/label/input[@id="card-1"]')
     close_x_button = (By.XPATH, '//div[@class="payment-picker open"]'
                       '//div[@class="section active"]//button[@class="close-button section-close"]')
 
     blanket_scarves = (By.CSS_SELECTOR, '.reqs-body .r-type-switch:nth-of-type(1) .slider')
-
     order_icecream = (By.XPATH, ".//div[@class='r r-type-group']//div[@class='counter-plus']")
     icecream_verify_value = (By.CSS_SELECTOR, '.r-group-items .r-type-counter:nth-of-type(1) .counter-value')
-
     modal_order_taxi = (By.CLASS_NAME, 'smart-button')
     trip_information = (By.XPATH, '//div[contains(text(),"El conductor llegará en")]')
 
@@ -91,7 +89,7 @@ class UrbanRoutesPage:
         self.set_from(address_from)
         self.set_to(address_to)
 
-        # Prueba 2 -------------------------- Seleccionar tarifa Confort
+        # Prueba 2 -------------------------- Seleccionar tarifa Conmfort
     def check_option_flash_button_is_enabled(self):
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(self.option_flash_button))
         return self.driver.find_element(*self.option_flash_button).is_enabled()
@@ -114,7 +112,7 @@ class UrbanRoutesPage:
         self.click_comfort_rate()
         self.check_text_comfort_rate()
 
-        # Prueba 3 -------------------------- Ingresar Número de Teléfono
+        # Prueba 3 -------------------------- Rellenar el número de teléfono
     def click_phone_number_button(self):
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(self.phone_numer_button))
         self.driver.find_element(*self.phone_numer_button).click()
@@ -150,7 +148,7 @@ class UrbanRoutesPage:
         self.set_code()
         self.click_verify_button()
 
-        # Prueba 4 -------------------------- Método de pago
+        # Prueba 4 -------------------------- Agregar Método de pago
     def click_payment_button(self):
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(self.payment_button))
         self.driver.find_element(*self.payment_button).click()
@@ -246,7 +244,7 @@ class UrbanRoutesPage:
         self.click_modal_order_taxi()
         self.check_text_order_taxi()
 
-        # Prueba 9 ------------------------
+        # Prueba 9 ------------------------Aparece el modal con detalles del viaje
     def verify_trip_information(self):
         WebDriverWait(self.driver, 40).until(expected_conditions.visibility_of_element_located(self.trip_information))
         return self.driver.find_element(*self.trip_information).text

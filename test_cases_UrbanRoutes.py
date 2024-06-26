@@ -69,25 +69,21 @@ class TestUrbanRoutes:
         assert routes_page.check_blanket_scarves_is_enabled() == True
 
         # Prueba 7 Pedir 2 helados
-
     def test_order_icecream(self):
         routes_page = UrbanRoutesPage(self.driver)
         routes_page.icecream_added()
         assert routes_page.get_icecream_added_value() == '2'
 
         # Prueba 8 Aparece el modal para buscar un taxi
-
     def test_order_a_taxi(self):
         routes_page = UrbanRoutesPage(self.driver)
-        # time.sleep(3)
         routes_page.select_modal_order_taxi()
         assert routes_page.check_order_taxi_is_enabled() == True
         assert 'Pedir un taxi' in routes_page.check_text_order_taxi()
 
-        # Prueba 9 Aparece el modal para buscar un taxi
+        # Prueba 9 Aparece el modal con detalles del viaje
     def test_verify_trip_information(self):
         routes_page = UrbanRoutesPage(self.driver)
-        # time.sleep(3)
         assert 'El conductor llegará' in routes_page.verify_trip_information()
 
     @classmethod
