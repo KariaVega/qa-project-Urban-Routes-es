@@ -1,5 +1,5 @@
 # Proyecto: Urban Routes
-
+## *Automatización de las pruebas*
 ![image](https://github.com/user-attachments/assets/2f64ea02-82a9-45e3-bbae-5d41a2232e2c)
 
 ### :page_facing_up: *Documentación utilizada:* 
@@ -19,12 +19,12 @@
 
 <img decoding="async" src="https://img.shields.io/badge/DevTools-D80B01?style=for-the-badge&logo=Drawio&logoColor=white" alt="Drawio"/>
 <img decoding="async" src="https://img.shields.io/badge/Python-0052CC?style=for-the-badge&logo=python&logoColor=white" alt="python"/>
-<img decoding="async" src="https://img.shields.io/badge/PyCharm-808000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white" alt="PyCharm"/>
+<img decoding="async" src="https://img.shields.io/badge/PyCharm-darkgreen.svg?&style=for-the-badge&logo=PyCharm&logoColor=white" alt="PyCharm"/>
 <img decoding="async" src="https://img.shields.io/badge/Git_Bash-D89B01?&style=for-the-badge&logo=GitBash&logoColor=white" alt="GitBash"/>
 <img decoding="async" src="https://img.shields.io/badge/GitHub-000000.svg?&style=for-the-badge&logo=GitHub&logoColor=white" alt="GitHub"/>
 <img decoding="async" src="https://img.shields.io/badge/Selenium-008000?style=for-the-badge&logo=Selenium&logoColor=white" alt="Selenium"/>
-<img decoding="async" src="https://img.shields.io/badge/Pytest-0052CC?style=for-the-badge&logo=pytest&logoColor=white" alt="pytest"/>
-<img decoding="async" src="https://img.shields.io/badge/Pip-30D5C8?style=for-the-badge&logo=Pip&logoColor=white" alt="Pip"/>
+<img decoding="async" src="https://img.shields.io/badge/Pytest-darkblue?style=for-the-badge&logo=pytest&logoColor=white" alt="pytest"/>
+<img decoding="async" src="https://img.shields.io/badge/Pip-darkred?style=for-the-badge&logo=Pip&logoColor=white" alt="Pip"/>
 
 ### :computer:  *Descripción del Aplicativo Urban Routes* 
 - Urban Routes es una aplicación que crea rutas y calcula la duración y precio del viaje para diferentes tipos de transporte. La interfaz es bastante sencilla, contiene dos campos para las direcciones: "Desde" y "Hasta". Además, cuenta con tres modos ("Óptimo", "Flash" y "Personal"), así como íconos para los tipos de transporte (automóvil del usuario, a pie, taxi, bicicleta, scooter o compartir un automóvil). Se realizará la automatización de las pruebas de la selección de la tarifa Comfort y el llenado de su formulario para el pedido y la verificación de la confirmación.
